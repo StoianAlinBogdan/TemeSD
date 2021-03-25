@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+	
+{% block content %}
+<h1>{% block title %} Edit "{{ cheltuiala['created'] }}" {% endblock %}</h1>
+
+<form method="post">
+	<div class="form-group">
+		<label for="valoare">Valoare</label>
+		<input type="text" name="valoare" placeholder="valoare" class="form-control" value="{{ request.form['valoare'] or cheltuiala['valoare'] }}">
+		</input>
+	</div>
+
+	<div class="form-group">
+		<label for="detalii">Detalii</label>
+		<textarea name="detalii" placeholder="detalii" class="form-control">{{ request.form['detalii'] or cheltuiala['detalii'] }} </textarea>
+	</div>
+	<div class="form-group">
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</div>
+</form>
+<hr>
+
+<form action="{{ url_for('delete', id=cheltuiala['id']) }}" method="POST">
+	<input type="submit" value="Delete Cheltuiala" class="btn btn=danger btn=sm" onclick="return confirm('Esti sigur ca vrei sa stergi cheltuiala?')">
+</form>
+{% endblock %}

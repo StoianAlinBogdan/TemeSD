@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title%} Creeaza o cheltuiala noua {% endblock %}</h1>
+
+<form method="post">
+	<div class="col-lg-9 col-sm-12">
+	<div class="form-group">
+		<label for="valoare">Valoare</label>
+		<input type="text"  name="valoare" placeholder="Valoare" class="form-control" value="{{ request.form['valoare']}}" </input>
+	</div>
+	
+	<div class="form-group">
+		<label for="detalii">Detalii</label>
+		<textarea name="detalii" placeholder="Detalii" class="form-control">{{ request.form['detalii'] }} </textarea>
+	</div>
+	<div class="form-group">
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</div>
+	</div>
+</form>
+{% endblock %}

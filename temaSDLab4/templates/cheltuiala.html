@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h2> {% block title %} {{ cheltuiala['valoare'] }} {% endblock %}</h2>
+	<span class="badge badge-primary">{{ cheltuiala['created'] }} </span>
+	<p>{{ cheltuiala['detalii']}} </p>
+	<br><br>
+	<a href="/"> Return to index </a>
+{% endblock %}
